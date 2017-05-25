@@ -1,3 +1,40 @@
-<div>
-  <h1>{{message}}</h1>
+<div class="container">
+  <div class="ui middle aligned center aligned grid">
+    <div class="column six wide">
+      <h2>Capstone Redux Login</h2>
+      <form #loginForm="ngForm" class="ui large form" (ngSubmit)="onSubmit()">
+        <div class="ui raised segment left aligned">
+          <div class="field">
+            <label for="username">Username</label>
+            <div class="ui left icon input">
+              <input type="text" placeholder="Username" id="username">
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="ui left icon input">
+              <input type="password" placeholder="Password" id="password">
+              <i class="lock icon"></i>
+            </div>
+          </div>
+          <button type="submit" class="ui fluid primary button">Login</button>
+        </div>
+        <!--<div *ngIf="loginError">
+          <div class="ui grid center aligned message">
+            <small>
+              <i class="warning sign icon red"></i>
+              {{errorMessage}}
+            </small>
+          </div>
+        </div>-->
+      </form>
+      <div class="ui message">Don't have a login?&nbsp;
+        <a class="item" routerLink="/registration" routerLinkActive="active">
+          Register Here
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
+

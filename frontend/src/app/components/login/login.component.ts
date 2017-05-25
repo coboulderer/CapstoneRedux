@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 
 export class LoginComponent {
 
-  message: string = 'Login Placeholder';
+  onSubmit(): void {
+    console.log('onSubmit() function called');
+  }
 }
