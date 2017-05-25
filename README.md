@@ -1,5 +1,5 @@
-#Redux of Masters Capstone
+# Redux of Masters Capstone
 
-##Planned Changes
+## Planned Changes
 * Update front end to use most recent verison of Angular
 * Convert backend to microservices architecture, move away from SOA
