@@ -1,0 +1,79 @@
+
+<div class="container">
+  <div class="ui middle aligned center aligned grid">
+    <div *ngIf="!registerSuccess" class="column ten wide">
+      <h2 class="ui dividing header">New User Registration</h2>
+      <form #registerForm="ngForm" class="ui large form" (ngSubmit)="onSubmit()">
+        <small>All Fields Are Required</small>
+        <div class="ui segment raised left aligned">
+          <div class="two fields">
+            <div class="field">
+              <label for="firstName">First Name</label>
+              <input type="text" name="firstName" [(ngModel)]="newUser.firstName"
+                     #firstName="ngModel" id="firstName" required/>
+            </div>
+            <div class="field">
+              <label for="lastName">Last Name</label>
+              <input type="text" name="lastName" [(ngModel)]="newUser.lastName"
+                     #lastName="ngModel" id="lastName" required/>
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field">
+              <label for="emailAddress">Email Address</label>
+              <input type="email" name="emailAddress" [(ngModel)]="newUser.emailAddress"
+                     #emailAddress="ngModel" id="emailAddress" required/>
+            </div>
+            <div class="field">
+              <label for="userName">Username</label>
+              <input type="text" name="userName" [(ngModel)]="newUser.userName"
+                     #userName="ngModel" id="userName" required minlength="5"/>
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field">
+              <label for="password">Password</label>
+              <input type="password" name="password" [(ngModel)]="passwords.password"
+                     #password="ngModel" id="password" required minlength="6"/>
+            </div>
+            <div class="field">
+              <label for="passwordConf">Password Confirmation</label>
+              <input type="password" name="passwordConf" [(ngModel)]="passwords.passwordConf"
+                     #passwordConf="ngModel" id="passwordConf" required minlength="6"/>
+            </div>
+          </div>
+          <div [hidden]="passwordsMatch">
+            <div class="ui grid center aligned message">
+              <small>
+                <i class="warning sign icon red"></i>
+                Password and Password Confirmation must match to Register!
+                <i class="warning sign icon red"></i>
+              </small>
+            </div>
+          </div>
+          <div [hidden]="!submitError">
+            <div class="ui grid center aligned message">
+              <small>
+                <i class="warning sign icon red"></i>
+                {{errorMessage}}
+                <i class="warning sign icon red"></i>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="ui center aligned grid">
+          <div class="center aligned two column row">
+            <div class="column right aligned">
+              <button type="submit" class="ui primary button">Register</button>
+            </div>
+            <div class="column left aligned">
+              <a class="ui button" [routerLink]="['/login']" routerLinkActive="active">
+                Cancel
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
